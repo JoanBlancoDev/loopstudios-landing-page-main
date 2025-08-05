@@ -482,7 +482,7 @@ img {
     width: 100%;
     cursor: pointer;
     background-color: var(--white-color);
-    opacity: 80%;
+    opacity: 60%;
     transition: ease-in-out width 0.5s;
    }
   .creation-card:hover h4 {

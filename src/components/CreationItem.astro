@@ -1,0 +1,11 @@
+---
+const { item } = Astro.props;
+---
+
+<div class="creation-card">
+  <picture>
+    <source media="(min-width: 992px)" srcset={item.imgUrlDesktop} />
+    <img src={item.imgUrlMobile} alt={item.title} />
+  </picture>
+  <h4>{item.title}</h4>
+</div>

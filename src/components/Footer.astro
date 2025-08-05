@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import instagramIcon from "../assets/images/icon-instagram.svg";
+import facebookIcon from "../assets/images/icon-facebook.svg";
+import pinterestIcon from "../assets/images/icon-pinterest.svg";
+import twitterIcon from "../assets/images/icon-twitter.svg";
+---
+
+<footer class="footer">
+  <section>
+    <nav class="footer-nav">
+      <h2 class="logo-footer">loopstudios</h2>
+      <ul class="nav-links-footer">
+        <li>
+          <a class="nav-link-footer-item" href="#">About</a>
+        </li>
+        <li>
+          <a class="nav-link-footer-item" href="#">Careers</a>
+        </li>
+        <li>
+          <a class="nav-link-footer-item" href="#">Events</a>
+        </li>
+        <li>
+          <a class="nav-link-footer-item" href="#">Products</a>
+        </li>
+        <li>
+          <a class="nav-link-footer-item" href="#">Support</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="footer-extras">
+      <div class="social-media-container">
+        <a
+          class="social-media-item"
+          target="_blank"
+          href="https://facebook.com"
+        >
+          <Image src={facebookIcon} alt={"facebook-icon"} />
+        </a>
+        <a class="social-media-item" target="_blank" href="https://x.com">
+          <Image src={twitterIcon} alt={"twitter-icon"} />
+        </a>
+        <a
+          class="social-media-item"
+          target="_blank"
+          href="https://www.pinterest.com/"
+        >
+          <Image src={pinterestIcon} alt={"pinterest-icon"} />
+        </a>
+        <a
+          class="social-media-item"
+          target="_blank"
+          href="https://www.instagram.com"
+        >
+          <Image src={instagramIcon} alt={"instagram-icon"} />
+        </a>
+      </div>
+      <p class="footer-rights">© 2025 Loopstudios. All rights reserved.</p>
+    </div>
+  </section>
+</footer>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".footer",
+      toggleActions: "play reverse play reverse",
+    },
+  });
+  tl.from(".footer", {
+    x: -1000,
+    opacity: 0,
+    duration: 1.5,
+    ease: "power4.out",
+
+  });
+  tl.from(".social-media-item, .footer-rights", {
+    y: -100,
+    scale: 0,
+    rotate: 90,
+    opacity: 0,
+    stagger: 0.2,
+    duration: 1.5,
+    ease: "power4.out",
+  }, "<");
+  tl.from(".nav-links-footer li, .logo-footer", {
+    x: -1000,
+    opacity: 0,
+    scale: 0,
+    stagger: 0.2,
+    duration: 1.5,
+    ease: "power4.out",
+  }, "<");
+</script>

@@ -1,0 +1,40 @@
+---
+import heroImageMobile from "../assets/images/mobile/image-hero.jpg";
+import heroImageDesktop from "../assets/images/desktop/image-hero.jpg";
+import Navigation from "./Navigation.astro";
+import { Image } from "astro:assets";
+---
+
+<section class="hero-section">
+  <header class="header">
+    <Navigation/>
+  </header>
+  <div class="hero-background">
+    <picture>
+      <source media="(min-width: 1100px)" srcset={heroImageDesktop.src} />
+      <Image
+        class="hero-image"
+        src={heroImageMobile}
+        alt="immersive experiences that deliver"
+      />
+    </picture>
+  </div>
+
+  <div class="hero-info">
+    <div class="hero-info__container">
+      <h2 class="hero-info__heading">IMMERSIVE EXPERIENCES THAT DELIVER</h2>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  
+  gsap.from('.hero-info', {
+    y: 200,
+    ease: "power4.out",
+    scale: 0,
+    opacity: 0,
+    duration: 1.5,
+  });
+</script>

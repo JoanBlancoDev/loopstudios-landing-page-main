@@ -1,0 +1,93 @@
+---
+import { Image } from "astro:assets";
+import burgerIcon from "../assets/images/icon-hamburger.svg";
+import closeIcon from "../assets/images/icon-close.svg";
+---
+
+<nav class="nav-principal">
+  <h1 class="logo">loopstudios</h1>
+
+  <ul class="nav-links">
+    <li>
+      <a class="nav-link-item" href="#">About</a>
+    </li>
+    <li>
+      <a class="nav-link-item" href="#">Careers</a>
+    </li>
+    <li>
+      <a class="nav-link-item" href="#">Events</a>
+    </li>
+    <li>
+      <a class="nav-link-item" href="#">Products</a>
+    </li>
+    <li>
+      <a class="nav-link-item" href="#">Support</a>
+    </li>
+  </ul>
+  <!-- MENU MOBILE -->
+  <ul id="menu-mobile" class="menu-mobile">
+    <li>
+      <a class="menu-item" href="#">About</a>
+    </li>
+    <li>
+      <a class="menu-item" href="#">Careers</a>
+    </li>
+    <li>
+      <a class="menu-item" href="#">Events</a>
+    </li>
+    <li>
+      <a class="menu-item" href="#">Products</a>
+    </li>
+    <li>
+      <a class="menu-item" href="#">Support</a>
+    </li>
+  </ul>
+  <button id="burger-icon-btn" class="burger-icon">
+    <Image
+      id="burger-icon-img"
+      class="burger-icon-img"
+      src={burgerIcon}
+      alt="burger icon"
+    />
+
+    <Image
+      id="close-icon-img"
+      class="close-icon-img"
+      src={closeIcon}
+      alt="close icon"
+    />
+  </button>
+</nav>
+
+<script>
+  import { gsap } from "gsap";
+
+  gsap.from(".logo", {
+    y: -200,
+    ease: "power4.out",
+    opacity: 0,
+    duration: 1.5,
+  });
+  gsap.from(".nav-links li", {
+    y: -200,
+    ease: "power4.out",
+    opacity: 0,
+    duration: 1.5,
+    stagger: .25
+  });
+
+
+  const burgerIconBtn = document.getElementById("burger-icon-btn");
+  const menuMobile = document.getElementById("menu-mobile");
+
+  const openMenu = (event: MouseEvent) => {
+    event.stopPropagation();
+
+    if (burgerIconBtn) {
+      burgerIconBtn.classList.toggle("is-open");
+      menuMobile?.classList.toggle("is-open");
+    }
+  };
+
+  burgerIconBtn?.addEventListener("click", openMenu);
+</script>

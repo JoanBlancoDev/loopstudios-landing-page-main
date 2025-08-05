@@ -1,0 +1,124 @@
+---
+import CreationItem from "./CreationItem.astro";
+
+const creations = [
+  {
+    title: "Deep Earth",
+    imgUrlMobile: "src/assets/images/mobile/image-deep-earth.jpg",
+    imgUrlDesktop: "src/assets/images/desktop/image-deep-earth.jpg",
+    alt: "Deep-Earth-image",
+  },
+  {
+    title: "Night Arcade",
+    imgUrlMobile: "src/assets/images/mobile/image-night-arcade.jpg",
+    imgUrlDesktop: "src/assets/images/desktop/image-night-arcade.jpg",
+    alt: "Night-Arcade-image",
+  },
+  {
+    title: "Soccer Team",
+    imgUrlMobile: "src/assets/images/mobile/image-soccer-team.jpg",
+    imgUrlDesktop: "src/assets/images/desktop/image-soccer-team.jpg",
+    alt: "Soccer-Team-image",
+  },
+  {
+    title: "The Grid",
+    imgUrlMobile: "src/assets/images/mobile/image-grid.jpg",
+    imgUrlDesktop: "src/assets/images/desktop/image-grid.jpg",
+    alt: "Grid-image",
+  },
+  {
+    title: "From Up Above VR",
+    imgUrlMobile: "src/assets/images/mobile/image-from-above.jpg",
+    imgUrlDesktop: "src/assets/images/desktop/image-from-above.jpg",
+    alt: "From-Above-image",
+  },
+  {
+    title: "Pocket Borealis",
+    imgUrlMobile: "src/assets/images/mobile/image-pocket-borealis.jpg",
+    imgUrlDesktop: "src/assets/images/desktop/image-pocket-borealis.jpg",
+    alt: "Pcoket-Borealis-image",
+  },
+  {
+    title: "The Curiosity",
+    imgUrlMobile: "src/assets/images/mobile/image-curiosity.jpg",
+    imgUrlDesktop: "src/assets/images/desktop/image-curiosity.jpg",
+    alt: "Curiosity-image",
+  },
+  {
+    title: "Make It Fisheye",
+    imgUrlMobile: "src/assets/images/mobile/image-fisheye.jpg",
+    imgUrlDesktop: "src/assets/images/desktop/image-fisheye.jpg",
+    alt: "FishEye-image",
+  },
+];
+---
+
+<section class="creations-section">
+  <div class="creations-header">
+    <h3>OUR CREATIONS</h3>
+    <div class="btn-overflow">
+      <a class="see-all-btn desktop" href="#see-all">SEE ALL</a>
+    </div>
+  </div>
+
+  <div class="creations-grid">
+    {creations.map((item) => <CreationItem item={item} />)}
+  </div>
+
+  <a class="see-all-btn mobile" href="#see-all">SEE ALL</a>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".creations-section",
+      start: "top 80%",
+      end: "bottom 10%",
+      toggleActions: "play reverse play reverse",
+    },
+  });
+
+  tl.from(".creations-section h3", {
+    x: -1000,
+    opacity: 0,
+    duration: 1.5,
+    ease: "power4.out",
+  });
+  tl.from(
+    ".creations-section .see-all-btn.desktop",
+    {
+      x: -500,
+      opacity: 0,
+      duration: 1.5,
+      ease: "power4.out",
+    },
+    "<"
+  );
+  tl.from(
+    ".creation-card",
+    {
+      x: -1000,
+      stagger: 0.2,
+      opacity: 0,
+      duration: 1.5,
+      ease: "power4.out",
+    },
+    "<"
+  );
+  tl.from(
+    ".creations-section .see-all-btn.mobile",
+    {
+      x: -500,
+      opacity: 0,
+      duration: 1.5,
+      ease: "power4.out",
+    },
+    "<=2"
+  );
+
+  ScrollTrigger.refresh();
+</script>

@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+import interactiveImg from "../assets/images/mobile/image-interactive.jpg";
+import interactiveImgDesktop from "../assets/images/desktop/image-interactive.jpg";
+---
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="about-img-container">
+    <picture>
+      <source media="(min-width: 992px)" srcset={interactiveImgDesktop.src} />
+
+      <Image class={"about-img"} src={interactiveImg} alt={"interactive-img"} />
+    </picture>
+  </div>
+  <div class="about-info">
+    <h3>THE LEADER IN INTERACTIVE VR</h3>
+    <p>
+      Founded in 2011, Loopstudios has been producing worl-class virtual reality
+      projects for some of the best companies around the globe. Our
+      award-winning creations have transformed businesses through digital
+      experiences tha bing to their brand.
+    </p>
+  </div>
+</section>
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+    let tl = gsap.timeline({
+      scrollTrigger: {
+          trigger: '.about-section',
+          start: 'top 80%',
+          end: 'bottom 10%',
+          toggleActions: "play reverse play reverse",
+        }
+    })
+      tl.from('.about-section', {
+        x: -1000,
+        duration: 1.5,
+        opacity: 0,
+        ease: 'power4.out',
+      })
+      tl.from('.about-info p', {
+        y: 1000,
+        duration: 1.5,
+        opacity: 0,
+        ease: 'power4.out',
+      
+      }, "<")
+      tl.from('.about-info h3', {
+        y: -1000,
+        duration: 1.5,
+        opacity: 0,
+        ease: 'power4.out',
+      
+      }, "<")
+
+
+</script>

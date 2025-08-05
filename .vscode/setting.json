@@ -1,0 +1,68 @@
+// {
+//   "editor.suggestSelection": "first",
+//   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+//   "editor.detectIndentation": false,
+//   "editor.tabSize": 2,
+//   // "editor.defaultFormatter": "esbenp.prettier-vscode",
+//   "editor.formatOnPaste": true,
+//   "workbench.colorCustomizations": {},
+//   "javascript.updateImportsOnFileMove.enabled": "always",
+//   "editor.minimap.enabled": true,
+//   "diffEditor.ignoreTrimWhitespace": false,
+//   "prettier.bracketSpacing": true,
+//   "eslint.enable": true,
+//   "eslint.validate": [
+//     "javascript",
+//     "javascriptreact",
+//     "typescript",
+//     "typescriptreact"
+//   ],
+//   "editor.codeActionsOnSave": {
+//     "source.addMissingImports.ts": "explicit",
+//     "source.removeUnusedImports": "explicit",
+//     "source.fixAll.eslint": "explicit"
+//     // "source.removeUnusedImports": "always"
+//   },
+//   // "typescript.preferences.importModuleSpecifier": "relative",
+//   "launch": {
+//     "configurations": [],
+//     "compounds": []
+//   },
+//   "emmet.includeLanguages": {
+//     "javascript": "javascriptreact"
+//   },
+//   "emmet.excludeLanguages": [
+//     "markdown"
+//   ],
+//   "editor.inlineSuggest.enabled": true,
+//   "githubPullRequests.pullBranch": "never",
+//   "prettier.useEditorConfig": true,
+//   "jest.autoRun": "off",
+//   "application.shellEnvironmentResolutionTimeout": 120,
+//   "terminal.integrated.defaultProfile.osx": "bash",
+//   "terminal.integrated.profiles.osx": {
+//     "bash": {
+//       "path": "/bin/bash",
+//     }
+//   },
+//   "editor.formatOnSave": true,
+//   "[jsonc]": {
+//     "editor.quickSuggestions": {
+//       "strings": true
+//     },
+//     "editor.suggest.insertMode": "replace",
+//     "editor.defaultFormatter": "vscode.json-language-features"
+//   },
+//   "editor.unicodeHighlight.allowedLocales": {
+//     "es": true
+//   },
+//   "debug.javascript.debugByLinkOptions": "on",
+//   "[typescriptreact]": {
+//     "editor.defaultFormatter": "vscode.typescript-language-features"
+//   },
+//   "editor.codeActions.triggerOnFocusChange": true,
+//   "terminal.integrated.automationProfile.osx": null,
+//   "workbench.colorTheme": "Monokai Classic",
+//   "typescript.updateImportsOnFileMove.enabled": "always",
+//   // "eslint.trace.server": "verbose"
+// }
